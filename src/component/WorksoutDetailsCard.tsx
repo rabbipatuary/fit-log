@@ -11,7 +11,7 @@ const WorksoutDetailsCard = ({workOut}:{workOut:IFitlog}) => {
     alt={workOut.name}
     width={740}
     height={550}
-    className="w-full h-[550px] object-cover rounded-xl"
+    className="w-full h-137.5 object-cover rounded-xl"
 />
                 </div>
 
@@ -88,7 +88,7 @@ const WorksoutDetailsCard = ({workOut}:{workOut:IFitlog}) => {
 
                     <div className="flex gap-3 mt-7">
                         <button className="bg-lime-400 text-black px-6 py-3 rounded-lg font-medium">
-                            Add to today's plan
+                            Add to today&apos;s plan
                         </button>
 
                         <button className="border border-gray-700 px-6 py-3 rounded-lg">
