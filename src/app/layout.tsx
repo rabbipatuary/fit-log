@@ -1,8 +1,10 @@
+import { ToastContainer } from "react-toastify";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/shared/Navbar";
 import Footer from "@/component/shared/Footer";
+import WorkOutsContextProvider from "@/context/WorkOutsContext";
 
 
 const geistSans = Geist({
@@ -28,10 +30,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        
+        <WorkOutsContextProvider>
         <Navbar></Navbar>
         <div>{children}</div>
         <Footer></Footer>
+         <ToastContainer></ToastContainer>
+        </WorkOutsContextProvider>
         </body>
     </html>
   );

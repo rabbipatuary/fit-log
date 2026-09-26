@@ -1,4 +1,5 @@
 import { IFitlog } from '@/types/FitlogDataType';
+import Todayplan from '@/workoutsdetails/TodayPlan';
 import Image from 'next/image';
 import React from 'react';
 
@@ -87,9 +88,7 @@ const WorksoutDetailsCard = ({workOut}:{workOut:IFitlog}) => {
                     </div>
 
                     <div className="flex gap-3 mt-7">
-                        <button className="bg-lime-400 text-black px-6 py-3 rounded-lg font-medium">
-                            Add to today&apos;s plan
-                        </button>
+                        <Todayplan></Todayplan>
 
                         <button className="border border-gray-700 px-6 py-3 rounded-lg">
                             Save for later
