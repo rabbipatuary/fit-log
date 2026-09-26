@@ -4,7 +4,7 @@ import banner from "@/assets/banner.png"
 const Banner = () => {
   return (
     <div className="flex justify-between items-center gap-4 container mx-auto p-4  rounded-4xl bg-[#15171d] ">
-        <div className="space-y-4">
+        <div className="space-y-6">
       <p className="text-[#c2f800]">WORKOUT LIBRARY</p>
       <h1 className="text-[40px] font-bold">TRAIN WITH INTENT. LOG EVERY SET.</h1>
      <p>

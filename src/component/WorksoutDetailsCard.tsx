@@ -1,5 +1,6 @@
 import { IFitlog } from '@/types/FitlogDataType';
-import Todayplan from '@/workoutsdetails/TodayPlan';
+// import SavePlan from '@/workoutsdetails/SavePlan';
+// import Todayplan from '@/workoutsdetails/TodayPlan';
 import Image from 'next/image';
 import React from 'react';
 
@@ -88,11 +89,8 @@ const WorksoutDetailsCard = ({workOut}:{workOut:IFitlog}) => {
                     </div>
 
                     <div className="flex gap-3 mt-7">
-                        <Todayplan></Todayplan>
-
-                        <button className="border border-gray-700 px-6 py-3 rounded-lg">
-                            Save for later
-                        </button>
+                       <button></button>
+                       <button></button>
                     </div>
                 </div>
             </div>

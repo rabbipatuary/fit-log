@@ -1,10 +1,10 @@
 
-import FitlogCard from '@/component/FitlogCard';
+import FitlogCard from '@/component/WorkOutsCard';
 import { IFitlog } from '@/types/FitlogDataType';
 import Link from 'next/link';
 import React from 'react';
 const getFitlogData=async()=>{
-    try{const res = await fetch('https://api.abcz.workers.dev/api/fitlog')
+    try{const res = await fetch('https://api.api-store.workers.dev/api/fitlog')
     
     const data = await res.json();
     return data;
@@ -19,7 +19,7 @@ const FitlogData = async() => {
     
     return (
        
-        <div className='grid grid-cols-3  gap-4 container max-auto p-4'>
+        <div className='grid grid-cols-3  gap-4 container max-auto '>
             {fitlogs.map((fitlog:IFitlog)=>{
                 return(
                      <Link href={`workouts/${fitlog.id}`} key={fitlog.id}>

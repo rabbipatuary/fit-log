@@ -7,7 +7,7 @@ interface ParamsType{
 }
 
 const getWorkOUtData=async(Id:string)=>{
-    const res=await fetch(`https://api.abcz.workers.dev/api/fitlog/${Id}`)
+    const res=await fetch(`https://api.api-store.workers.dev/api/fitlog/${Id}`)
     if(!res.ok){
         throw new Error('Failed to fetch')
     }

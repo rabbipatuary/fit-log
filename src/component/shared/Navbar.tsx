@@ -52,8 +52,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link className="flex items-center gap-2" href="/workouts">
-          {" "}
+        <Link className="flex items-center gap-2" href="/">
           <Image src={logo} alt="logo"></Image> <h1>FITLOG</h1>
         </Link>
       </div>
