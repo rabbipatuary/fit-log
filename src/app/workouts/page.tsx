@@ -19,7 +19,7 @@ const WorksOutPage = async() => {
         <div className='grid grid-cols-3  gap-4 container max-auto p-4'>
             {fitlogs.map((fitlog:IFitlog)=>{
                 return(
-                     <Link href={`/worksouts/${fitlog.id}`} key={fitlog.id}>
+                     <Link href={`workouts/${fitlog.id}`} key={fitlog.id}>
                     <div key={fitlog.id}>
                        <FitlogCard fitlog={fitlog}></FitlogCard>
                     </div>
