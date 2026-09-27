@@ -21,7 +21,7 @@ const WorkOutsPage=async()=>{
     return(
         <div className='p-4 m-4 space-y-4 container mx-auto'>
             <Banner></Banner>
-            <div className='my-9'>
+            <div id="library" className='my-9 '>
                 <h1 className='text-[40px] font-bold ' >THE LIBRARY</h1>
                 <p>Twelve lifts covering every major muscle group.</p>
                 </div>

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import banner from "@/assets/banner.png"
-import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -13,7 +12,7 @@ const Banner = () => {
   <br />
   into today&apos;s plan, and watch the week&apos;s work add up.
 </p>
-     <Link href={'/workouts'}><button className="btn text-black btn-warning bg-[#c2f800]">Browse Workouts</button></Link>
+     <a href="#library"><button className="btn text-black btn-warning bg-[#c2f800]">Browse Workouts</button></a>
     </div>
     <div>
        <Image src={banner} alt="banner" width={400} height={400}
