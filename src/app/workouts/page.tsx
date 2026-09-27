@@ -25,7 +25,7 @@ const WorkOutsPage=async()=>{
                 <h1 className='text-[40px] font-bold ' >THE LIBRARY</h1>
                 <p>Twelve lifts covering every major muscle group.</p>
                 </div>
-            <div className='grid grid-cols-3 gap-4 space-y-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 space-y-4'>
              
             {workouts.map((workout:IFitlog)=>{
                 return(
