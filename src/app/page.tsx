@@ -1,5 +1,6 @@
-import Banner from "@/homepage/Banner";
-import WorksOutPage from "./workouts/page";
+
+import WorkOutsPage from "./workouts/page";
+
 
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
     <div  >
       
       <div className="container mx-auto p-4  ">
-     <WorksOutPage ></WorksOutPage>
+     <WorkOutsPage></WorkOutsPage>
    </div>
    </div>
   );

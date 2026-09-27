@@ -1,53 +1,46 @@
-
 import WorkOutsCard from '@/component/WorkOutsCard';
 import Banner from '@/homepage/Banner';
-
 import { IFitlog } from '@/types/FitlogDataType';
 import Link from 'next/link';
 import React from 'react';
-const getWorkOutsData = async () => {
-    try {
-        const res = await fetch('https://api.api-store.workers.dev/api/fitlog')
 
-        if (!res.ok) {
-            console.log('API error, status:', res.status)
-            return []
-        }
-
-        const data = await res.json();
+const getWorkOUtsData=async()=>{
+    try{
+        const res=await fetch('https://api.api-store.workers.dev/api/fitlog');
+        const data=await res.json();
         return data;
-    } catch (error) {
-        console.log('failed to fetch', error)
-        return []
+    }catch{
+        console.log('Failed to fetch')
+        return [];
     }
 }
-const WorksOutPage = async() => {
-    const workouts = await getWorkOutsData();
-    
-    
-    return (
-        
-       
-       <div className='space-y-9'>
-        <Banner></Banner>
-        <div className='container mx-auto '>
-        <h1 className="text-[30px] ">THE LIBRARY</h1>
-         <p className="mb-6">Twelve lifts covering every major muscle group.</p>
-        <div className='grid grid-cols-2 md:grid-cols-3 items-center gap-4   '>
-            
+
+const WorkOutsPage=async()=>{
+    const workouts=await getWorkOUtsData();
+
+    return(
+        <div className='p-4 m-4 space-y-4 container mx-auto'>
+            <Banner></Banner>
+            <div className='my-9'>
+                <h1 className='text-[40px] font-bold ' >THE LIBRARY</h1>
+                <p>Twelve lifts covering every major muscle group.</p>
+                </div>
+            <div className='grid grid-cols-3 gap-4 space-y-4'>
+             
             {workouts.map((workout:IFitlog)=>{
                 return(
-                     <Link className="hover:border hover:border-[#c2f800] hover:rounded-[10px]" href={`workouts/${workout.id}`} key={workout.id}>
+                   
                     <div key={workout.id}>
-                       <WorkOutsCard workout={workout}></WorkOutsCard>
+                         <Link className=' block hover:border hover:rounded-[10px] hover:border-[#c2f800]' href={`/workouts/${workout.id}`}>  <WorkOutsCard workout={workout}></WorkOutsCard></Link>
                     </div>
-                    </Link>
+                    
                 )
             })}
         </div>
+        
         </div>
-        </div>
+        
     );
 };
 
-export default WorksOutPage;
+export default WorkOutsPage;
