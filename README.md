@@ -1,6 +1,6 @@
 ##Project name
 -----------------------------
-My Project Name is FitLOg.
+My Project Name is FitLog.
 
 ##Short description
 ---------------------------------
