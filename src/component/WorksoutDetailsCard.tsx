@@ -1,99 +1,116 @@
 import { IFitlog } from '@/types/FitlogDataType';
-// import SavePlan from '@/workoutsdetails/SavePlan';
-// import Todayplan from '@/workoutsdetails/TodayPlan';
+import SavePlan from '@/workoutsdetails/SavePlan';
+import TodayPlan from '@/workoutsdetails/TodayPlan';
+
 import Image from 'next/image';
 import React from 'react';
 
-const WorksoutDetailsCard = ({workOut}:{workOut:IFitlog}) => {
+const WorksoutDetailsCard = ({workout}:{workout:IFitlog}) => {
     return (
-       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div>
-                   <Image
-    src={workOut.image}
-    alt={workOut.name}
-    width={740}
-    height={550}
-    className="w-full h-137.5 object-cover rounded-xl"
-/>
-                </div>
+<div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-                <div>
-                    <h1 className="text-3xl font-bold uppercase">
-                        {workOut.name}
-                    </h1>
 
-                    <p className="text-gray-400 mt-3">
-                        {workOut.description}
-                    </p>
+        <div>
+          <Image
+            src={workout.image}
+            alt={workout.name}
+            width={500}
+            height={400}
+            className="w-full  object-cover rounded-xl"
+          />
+        </div>
 
-                    <div className="flex gap-2 mt-4">
-                        {workOut.muscleGroups?.map((muscle:string)=>(
-                            <span
-                                key={muscle}
-                                className="bg-lime-400 text-black px-4 py-1 rounded-full text-sm"
-                            >
-                                {muscle}
-                            </span>
-                        ))}
-                    </div>
 
-                    <div className="mt-5 border border-gray-800 rounded-xl overflow-hidden">
-                        <div className="flex justify-between p-4 border-b border-gray-800">
-                            <span className="text-gray-400 text-sm">EQUIPMENT</span>
-                            <span>{workOut.equipment}</span>
-                        </div>
 
-                        <div className="flex justify-between p-4 border-b border-gray-800">
-                            <span className="text-gray-400 text-sm">DIFFICULTY</span>
-                            <span>{workOut.difficulty}</span>
-                        </div>
+        <div>
+          <h1 className="text-3xl font-bold uppercase">{workout.name}</h1>
 
-                        <div className="flex justify-between p-4 border-b border-gray-800">
-                            <span className="text-gray-400 text-sm">SETS</span>
-                            <span>{workOut.sets}</span>
-                        </div>
+          <p className="text-gray-400 mt-3">{workout.description}</p>
 
-                        <div className="flex justify-between p-4 border-b border-gray-800">
-                            <span className="text-gray-400 text-sm">REPS</span>
-                            <span>{workOut.reps}</span>
-                        </div>
+          
 
-                        <div className="flex justify-between p-4 border-b border-gray-800">
-                            <span className="text-gray-400 text-sm">DURATION</span>
-                            <span>{workOut.duration} min</span>
-                        </div>
+          <div className="flex gap-2 mt-4">
+            {workout.muscleGroups?.map((muscle: string) => (
+              <span
+                key={muscle}
+                className="bg-lime-400 text-black px-4 py-1 rounded-full text-sm"
+              >
+                {muscle}
+              </span>
+            ))}
+          </div>
 
-                        <div className="flex justify-between p-4 border-b border-gray-800">
-                            <span className="text-gray-400 text-sm">CALORIES</span>
-                            <span>{workOut.caloriesBurned} kcal</span>
-                        </div>
+          
 
-                        <div className="flex justify-between p-4">
-                            <span className="text-gray-400 text-sm">RATING</span>
-                            <span>{workOut.rating}</span>
-                        </div>
-                    </div>
+          <div className="mt-5 border border-gray-800 rounded-xl overflow-hidden">
+            <div className="flex justify-between p-4 border-b border-gray-800">
+              <span className="text-gray-400 text-sm">EQUIPMENT</span>
 
-                    <div className="mt-7">
-                        <h2 className="font-bold text-lg mb-4">
-                            INSTRUCTIONS
-                        </h2>
-
-                        <ol className="space-y-3 text-gray-400">
-                            {workOut.instructions?.map((instruction:string,index:number)=>(
-                                <li key={index}>
-                                    {index+1}. {instruction}
-                                </li>
-                            ))}
-                        </ol>
-                    </div>
-
-                    <div className="flex gap-3 mt-7">
-                       <button></button>
-                       <button></button>
-                    </div>
-                </div>
+              <span>{workout.equipment}</span>
             </div>
+
+            <div className="flex justify-between p-4 border-b border-gray-800">
+              <span className="text-gray-400 text-sm">DIFFICULTY</span>
+
+              <span>{workout.difficulty}</span>
+            </div>
+
+            <div className="flex justify-between p-4 border-b border-gray-800">
+              <span className="text-gray-400 text-sm">SETS</span>
+
+              <span>{workout.sets}</span>
+            </div>
+
+            <div className="flex justify-between p-4 border-b border-gray-800">
+              <span className="text-gray-400 text-sm">REPS</span>
+
+              <span>{workout.reps}</span>
+            </div>
+
+            <div className="flex justify-between p-4 border-b border-gray-800">
+              <span className="text-gray-400 text-sm">DURATION</span>
+
+              <span>{workout.duration} min</span>
+            </div>
+
+            <div className="flex justify-between p-4 border-b border-gray-800">
+              <span className="text-gray-400 text-sm">CALORIES</span>
+
+              <span>{workout.caloriesBurned} kcal</span>
+            </div>
+
+            <div className="flex justify-between p-4">
+              <span className="text-gray-400 text-sm">RATING</span>
+
+              <span>{workout.rating}</span>
+            </div>
+          </div>
+
+
+
+          <div className="mt-7">
+            <h2 className="font-bold text-lg mb-4">INSTRUCTIONS</h2>
+
+            <ol className="space-y-3 text-gray-400">
+              {workout.instructions?.map(
+                (instruction: string, index: number) => (
+                  <li key={index}>
+                    {index + 1}. {instruction}
+                  </li>
+                ),
+              )}
+            </ol>
+          </div>
+
+          
+
+          <div className="flex gap-3 mt-7">
+            <TodayPlan workout={workout}></TodayPlan>
+
+            <SavePlan workout={workout}></SavePlan>
+          </div>
+        </div>
+      </div>
     );
 };
 

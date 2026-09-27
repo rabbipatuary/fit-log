@@ -12,10 +12,10 @@ const TodayPlan = ({ workout }: { workout: IFitlog }) => {
 
     const HandleTodayPlan = ()=>{
         if(isAdded){
-            toast.error("data already added")
+            toast.error("Already in your Plan !")
             return
         }
-        toast.success("Add to Today's Plan")
+        toast.success("Add to Today's Plan.")
         setPlan([...plan,workout])
         
     }

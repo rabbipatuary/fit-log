@@ -1,13 +1,21 @@
 import { IFitlog } from "@/types/FitlogDataType";
  import Image from "next/image";
- import { RxCross2 } from "react-icons/rx";
  import { TbClock } from "react-icons/tb";
  import { FaFire } from "react-icons/fa";
  import { CiStar } from "react-icons/ci";
+import Link from "next/link";
+import TodayPlanCardButtons from "./TodayPlanCardButtons";
 const TodayPlanCard = ({ plan }: { plan: IFitlog[] }) => {
   return (
     <div>
-      {plan.map((plan) => {
+       
+      { plan.length===0?
+      <div className="text-center">
+     <h1 className="text-[40px] font-bold">NOTHING HERE YET</h1>
+     <p className="pb-4 text-[#a1a1aa]">Browse the library and add a lift to get today moving.</p>
+      <Link href={'/workouts'}><button className="btn text-black btn-warning bg-[#c2f800]">Browse Workouts</button></Link>
+      </div>
+      :plan.map((plan) => {
         return (
           <div key={plan.id}>
            
@@ -48,17 +56,10 @@ const TodayPlanCard = ({ plan }: { plan: IFitlog[] }) => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <button className="rounded-full border border-gray-700 px-7 py-3 text-lg text-white">
+                  <Link href={`/workouts/${plan.id}`}><button className="btn btn-outline cursor-pointer rounded-4xl">
                     View Details
-                  </button>
-
-                  <button className="flex items-center gap-2 rounded-full bg-lime-400 px-7 py-3 text-lg font-semibold text-black">
-                    ✓ Mark as Done
-                  </button>
-
-                  <button className="text-2xl text-gray-500">
-                    <RxCross2 />
-                  </button>
+                  </button></Link>
+                  <TodayPlanCardButtons id={plan.id}></TodayPlanCardButtons>
                 </div>
               </div>
             </div>

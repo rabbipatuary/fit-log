@@ -1,9 +1,10 @@
 "use client"
 import { IFitlog } from "@/types/FitlogDataType";
-import { FaRegCalendarPlus } from "react-icons/fa";
 import React, { useContext } from "react";
 import { toast } from "react-toastify";
 import { Workoutcontext } from "@/context/WorkOutsContext";
+import { CiBookmark } from "react-icons/ci";
+
 
 const SavePlan = ({ workout }: { workout: IFitlog }) => {
    const {save,setSave}=useContext(Workoutcontext)
@@ -11,16 +12,16 @@ const SavePlan = ({ workout }: { workout: IFitlog }) => {
 
     const handleSavePlan = ()=>{
          if(isAdded){
-                    toast.error("data already added")
+                    toast.error("Already in your Saved plan !")
                     return
                 }
-        toast.success("Add to Save Plan")
+        toast.success("Add to Save Plan.")
         setSave([...save,workout])
         
     }
   return (
     <div>
-       <button className="btn btn-outline" onClick={handleSavePlan}><FaRegCalendarPlus /> Add to today&apos;s plan</button>
+       <button className="btn btn-outline" onClick={handleSavePlan}><CiBookmark /> Save for later</button>
     </div>
   );
 };

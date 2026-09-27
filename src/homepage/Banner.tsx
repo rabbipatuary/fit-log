@@ -13,7 +13,7 @@ const Banner = () => {
   <br />
   into today&apos;s plan, and watch the week&apos;s work add up.
 </p>
-     <Link href={'/workouts'}><button className="btn text-black btn-warning">Browse Workouts</button></Link>
+     <Link href={'/workouts'}><button className="btn text-black btn-warning bg-[#c2f800]">Browse Workouts</button></Link>
     </div>
     <div>
        <Image src={banner} alt="banner" width={400} height={400}
