@@ -28,10 +28,7 @@ const TodayPlanCardButtons = ({ id }: { id: number }) => {
     <div className="flex items-center gap-4">
       <div>
         <button
-          className="flex items-center gap-2 rounded-full bg-lime-400 px-7 py-3 text-lg font-semibold text-black disabled:cursor-not-allowed
-    disabled:bg-gray-500
-    disabled:text-gray-300
-    disabled:opacity-60"
+          className="flex items-center gap-2 rounded-full bg-lime-400 px-7 py-3 text-lg font-semibold text-black disabled:cursor-not-allowed"
           onClick={handleMarkasDone}
           disabled={isDone}
         >
