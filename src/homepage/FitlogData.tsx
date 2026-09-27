@@ -20,15 +20,15 @@ const FitlogData = async() => {
     return (
        
         <div className='grid grid-cols-3  gap-4 container max-auto '>
-            {fitlogs.map((fitlog:IFitlog)=>{
-                return(
-                     <Link href={`workouts/${fitlog.id}`} key={fitlog.id}>
-                    <div key={fitlog.id}>
-                       <FitlogCard fitlog={fitlog}></FitlogCard>
-                    </div>
-                    </Link>
-                )
-            })}
+            {fitlogs.map((fitlog: IFitlog) => {
+  return (
+    <Link href={`workouts/${fitlog.id}`} key={fitlog.id}>
+      <div>
+        <FitlogCard workout={fitlog}></FitlogCard>
+      </div>
+    </Link>
+  );
+})}
         </div>
     );
 };
