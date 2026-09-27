@@ -1,11 +1,11 @@
 import { IFitlog } from "@/types/FitlogDataType";
- import Image from "next/image";
- import { TbClock } from "react-icons/tb";
- import { FaFire } from "react-icons/fa";
- import { CiStar } from "react-icons/ci";
+import Image from "next/image";
+import { TbClock } from "react-icons/tb";
+import { FaFire } from "react-icons/fa";
+import { CiStar } from "react-icons/ci";
 import Link from "next/link";
 import TodayPlanCardButtons from "./TodayPlanCardButtons";
-const TodayPlanCard = ({ plan }: { plan: IFitlog[] }) => {
+const TodayPlanCard = ({ plan }:{plan:IFitlog[]}) => {
   return (
     <div>
        

@@ -3,6 +3,8 @@ import Image from "next/image";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import PlanBadged from "../PlanBadged";
+import SavedBadged from "../SavedBadged";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -18,6 +20,7 @@ const Navbar = () => {
           href="/myplan"
           className={`px-4 py-2 rounded-[20px] ${pathname === "/myplan"? "bg-[#1a2312] text-[#c2f800]" : ""}`} >My Plan</Link>
       </li>
+      
       
     </>
   );
@@ -59,8 +62,10 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-9">
+         <Link href="/myplan" ><PlanBadged></PlanBadged></Link>
+         
+         <Link href="/myplan" ><SavedBadged></SavedBadged></Link>
       </div>
     </div>
   );

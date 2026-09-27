@@ -21,7 +21,7 @@ const TodayPlan = ({ workout }: { workout: IFitlog }) => {
     }
   return (
     <div>
-       <button className="btn text-black btn-warning" onClick={HandleTodayPlan}><FaRegCalendarPlus /> Add to today&apos;s plan</button>
+       <button className="btn text-black btn-warning " onClick={HandleTodayPlan} ><FaRegCalendarPlus /> Add to today&apos;s plan</button>
     </div>
   );
 };

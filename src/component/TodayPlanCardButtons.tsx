@@ -4,6 +4,8 @@ import { Workoutcontext } from "@/context/WorkOutsContext";
 import React, { useContext, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { toast } from "react-toastify";
+import { FaCheck } from "react-icons/fa6";
+
 
 const TodayPlanCardButtons = ({ id }: { id: number }) => {
   const { setPlan } = useContext(Workoutcontext);
@@ -26,11 +28,14 @@ const TodayPlanCardButtons = ({ id }: { id: number }) => {
     <div className="flex items-center gap-4">
       <div>
         <button
-          className="flex items-center gap-2 rounded-full bg-lime-400 px-7 py-3 text-lg font-semibold text-black"
+          className="flex items-center gap-2 rounded-full bg-lime-400 px-7 py-3 text-lg font-semibold text-black disabled:cursor-not-allowed
+    disabled:bg-gray-500
+    disabled:text-gray-300
+    disabled:opacity-60"
           onClick={handleMarkasDone}
           disabled={isDone}
         >
-          ✓ {isDone ? "Done" : "Mark as Done"}
+          <FaCheck /> {isDone ? "Done" : "Mark as Done"}
         </button>
       </div>
 

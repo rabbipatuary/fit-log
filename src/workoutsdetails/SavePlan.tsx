@@ -21,7 +21,7 @@ const SavePlan = ({ workout }: { workout: IFitlog }) => {
     }
   return (
     <div>
-       <button className="btn btn-outline" onClick={handleSavePlan}><CiBookmark /> Save for later</button>
+       <button className="btn btn-outline" onClick={handleSavePlan} ><CiBookmark /> Save for later</button>
     </div>
   );
 };

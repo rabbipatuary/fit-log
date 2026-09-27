@@ -34,7 +34,8 @@ export default function RootLayout({
         <Navbar />
         <div>{children}</div>
         <Footer />
-        <ToastContainer />
+        <ToastContainer  position="top-right"
+               className="mt-16" />
         </WorkOutsContextProvider>
       </body>
     </html>
