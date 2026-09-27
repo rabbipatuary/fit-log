@@ -1,3 +1,5 @@
+import SavePlan from "@/workoutsdetails/SavePlan";
+import TodayPlan from "@/workoutsdetails/TodayPlan";
 import Image from "next/image";
 import React from "react";
 
@@ -25,26 +27,26 @@ const WorksOutDetailsPage = async ({ params }: ParamsType) => {
   return (
     <div className="min-h-screen bg-[#0d0f12] text-white p-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* Image */}
+
 
         <div>
-         <Image
-    src={workout.image}
-    alt={workout.name}
-    width={500}
-    height={400}
-    className="w-full  object-cover rounded-xl"
-/>
+          <Image
+            src={workout.image}
+            alt={workout.name}
+            width={500}
+            height={400}
+            className="w-full  object-cover rounded-xl"
+          />
         </div>
 
-        {/* Details */}
+
 
         <div>
           <h1 className="text-3xl font-bold uppercase">{workout.name}</h1>
 
           <p className="text-gray-400 mt-3">{workout.description}</p>
 
-          {/* Muscle Groups */}
+          
 
           <div className="flex gap-2 mt-4">
             {workout.muscleGroups?.map((muscle: string) => (
@@ -57,7 +59,7 @@ const WorksOutDetailsPage = async ({ params }: ParamsType) => {
             ))}
           </div>
 
-          {/* Workout Information */}
+          
 
           <div className="mt-5 border border-gray-800 rounded-xl overflow-hidden">
             <div className="flex justify-between p-4 border-b border-gray-800">
@@ -103,7 +105,7 @@ const WorksOutDetailsPage = async ({ params }: ParamsType) => {
             </div>
           </div>
 
-          {/* Instructions */}
+
 
           <div className="mt-7">
             <h2 className="font-bold text-lg mb-4">INSTRUCTIONS</h2>
@@ -119,16 +121,12 @@ const WorksOutDetailsPage = async ({ params }: ParamsType) => {
             </ol>
           </div>
 
-          {/* Buttons */}
+          
 
           <div className="flex gap-3 mt-7">
-            <button className="bg-lime-400 text-black px-6 py-3 rounded-lg font-medium">
-              Add to  today&apos;s plan
-            </button>
+            <TodayPlan workout={workout}></TodayPlan>
 
-            <button className="border border-gray-700 px-6 py-3 rounded-lg">
-              Save for later
-            </button>
+            <SavePlan workout={workout}></SavePlan>
           </div>
         </div>
       </div>

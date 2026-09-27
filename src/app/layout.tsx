@@ -6,6 +6,7 @@ import "./globals.css";
 
 import Navbar from "@/component/shared/Navbar";
 import Footer from "@/component/shared/Footer";
+import WorkOutsContextProvider from "@/context/WorkOutsContext";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -29,10 +30,12 @@ export default function RootLayout({
       className={`${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <WorkOutsContextProvider>
         <Navbar />
         <div>{children}</div>
         <Footer />
         <ToastContainer />
+        </WorkOutsContextProvider>
       </body>
     </html>
   );
